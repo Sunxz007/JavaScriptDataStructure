@@ -84,8 +84,6 @@ var PriorityQueue = function () {
         if (!add) {
             items.push(queueItem);
         }
-
-
     }
 
     //出列
@@ -107,11 +105,8 @@ var PriorityQueue = function () {
     this.size = function () {
         return items.length;
     }
-    
+
     this.getItems = function () {
         return items;
     }
-
-
-    
 }
