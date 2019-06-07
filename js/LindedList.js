@@ -32,62 +32,76 @@ var LinkedList = function () {
             var node = new Node(element);
 
             if (position > 0) {
-                var current=head;
-                var previous=null;
-                var index=0;
-                while(index<position){
-                    previous=current;
-                    current=current.next;
+                var current = head;
+                var previous = null;
+                var index = 0;
+                while (index < position) {
+                    previous = current;
+                    current = current.next;
                     index++;
                 }
 
-                previous.next=node;
-                node.next=current;
+                previous.next = node;
+                node.next = current;
 
             } else {
                 var current = head;
                 head = node;
-                head.next=current.next;
-                
+                head.next = current.next;
+
             }
             length++;
-        }      
+        }
     }
-    this.remove=function(position){
+    this.removeAt = function (position) {
         //越界
         if (position >= 0 && position < length) {
             if (position > 0) {
-                var current=head;
-                var previous=null;
-                var index=0;
-                while(index<position){
-                    previous=current;
-                    current=current.next;
+                var current = head;
+                var previous = null;
+                var index = 0;
+                while (index < position) {
+                    previous = current;
+                    current = current.next;
                     index++;
                 }
-                previous.next=current.next;
+                previous.next = current.next;
             } else {
                 var current = head;
-                head=current.next;
+                head = current.next;
             }
             length--;
-        }      
+        }
     }
 
 
     //获取元素索引
-    this.indexOf=function(element){
-        var current=head;
-        var index=0;
-        while (current){
-            if(element===current.element){
+    this.indexOf = function (element) {
+        var current = head;
+        var index = 0;
+        while (current) {
+            if (element === current.element) {
                 return index;
             }
             index++;
-            current=current.next;
+            current = current.next;
         }
         return -1;
     }
+
+    //从指定位置删除
+    this.remove = function (element) {
+        return removeAt(indexOf(element));
+    }
+
+    this.isEmpty = function () {
+        return length === 0;
+    }
+    //获取链表长度
+    this.size = function () {
+        return length;
+    }
+
 
     this.getHead = function () {
         return head;
