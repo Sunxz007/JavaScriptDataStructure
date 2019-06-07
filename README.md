@@ -1,4 +1,5 @@
-# JavaScriptDataStructure
+# JavaScript数据结构(JavaScriptDataStructure)
+[TOC]
 ## 一、数据结构 
 ### 1.1 栈(stack)
 > **定义：** 一种先进后出（LIFO）的数据结构
@@ -119,7 +120,23 @@ var Queue = function () {
 }
 
 ```
-### 1.3链表
+### 1.3链表(LInkedList)
+> **定义：** 链表中的每一个元素都带有下一个元素的指针，指向下一个元素，就像一列火车，每一列不仅携带自己的乘客（item），还要与下一节火车相连（next）；
+
+![链表示意图](./img/链表.png)
+
+**<font size="6">链表的操作:</font>**
+| 方法名  | 操作           |
+| ------- | --------------|
+| insert | 插入元素       |
+| append | 尾部添加元素    |
+| indexOf| 获取元素索引    |
+| remove | 链表中移除某一项|
+| removeAt| 链表中特定位置移除一项|
+| size    | 链表长度 |
+
+![链表操作1](./img/链表操作1.png)
+![链表操作2](./img/链表操作2.png)
 ### 1.4集合
 ### 1.5字典
 ### 1.6树
