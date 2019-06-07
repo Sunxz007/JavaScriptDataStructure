@@ -1,12 +1,12 @@
 # JavaScriptDataStructure
 ## 一、数据结构 
-### 1.1 栈
+### 1.1 栈(stack)
 > **定义：** 一种先进后出（LIFO）的数据结构
 
-  **<center><font size="6">栈结构示意图</font></center>**
+
 ![栈的示意图](./img/栈.png)
 
- **<center><font size="6">栈的操作</font></center>**
+
 ![栈的操作示意图](./img/栈的操作.png)
 
 **<font size="6">栈的方法实现</font>**
@@ -20,7 +20,7 @@
 | clear   | 移除全部元素   |
 | size    | 获取栈的长度   |
 
-[**代码示例**](./js/Stack.js)
+[**<font size="6">代码示例:</font>**](./js/Stack.js)
 ``` javascript
 
 //定义一个栈的类
@@ -67,8 +67,58 @@ var Stack = function () {
 }
 ```
 
-### 1.2队列 
+### 1.2队列 (Queue)
+> **定义:** 一种先进先出（FIFO）的数据结构
 
+![队列的示意图](./img/队列.png)
+**<font size="6">栈的方法实现</font>**
+
+| 方法名  | 操作           |
+| ------- | --------------|
+| enqueue | 入队          |
+| dequeue | 出对          |
+| front   | 查看队列头    |
+| isEmpty | 检查队列是否为空|
+| size    | 获取队列的长度 |
+
+[**<font size="6">代码示例:</font>**](./js/Queue.js)
+```javascript
+var Queue = function () {
+    //使用数组作为队列的载体
+    var items = [];
+
+    //入列
+    this.enqueue = function (element) {
+        items.push(element);
+    }
+
+    //出列
+    this.dequeue = function () {
+        return items.shift();
+    }
+
+    //查看队列头
+    this.front = function () {
+        return items[0];
+    }
+
+    //检查队列是否为空
+    this.isEmpty = function () {
+        return items.length === 0;
+    }
+
+    //获取队列长度
+    this.size=function(){
+        return items.length;
+    }
+
+    //获取全部队列
+    this.getItems=function(){
+        return items;
+    }
+}
+
+```
 ### 1.3链表
 ### 1.4集合
 ### 1.5字典

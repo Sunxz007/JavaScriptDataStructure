@@ -35,9 +35,28 @@ var Stack = function () {
     this.size=function(){
         return items.length;
     }
-    
+
     //获取整个栈
     this.getitems = function () {
         return items;
     }
+}
+
+
+//10进制转换为二进制
+var DecToBin =function(Dec){
+    //创建一个栈变量存储数据
+    var s=new Stack;
+    //穿件一个变量存储每次计算的余数
+    var remainder
+    while(Dec>0){
+        remainder=Dec%2;
+        s.push(remainder);
+        Dec=Math.floor(Dec/2);
+    }
+    var result="";
+    while(!s.isEmpty()){
+        result=result+s.pop()
+    }
+    return result;
 }
