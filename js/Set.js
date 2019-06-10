@@ -107,15 +107,15 @@ s.add(2);
 s.add(1);
 //es6中的额外的set方法
 //forEach
-s.forEach(function(value1,value2,value3){
+/* s.forEach(function(value1,value2,value3){
     console.log("value1-"+value1);//set元素的值
     console.log("value2-"+value2);//set元素的指针
     console.log("value3-"+value3);//set实例对象s
-})
+}) */
 
 //entries迭代器
 var interator=s.entries();
-console.log(interator.next().value);
+//console.log(interator.next().value);
 
 //es解构
 var a=[1,2,3,4];
@@ -144,10 +144,10 @@ var difference=new Set([...a].filter(x=>!b.has(x)));
 //Weakset只能添加对象作为元素
 var s=new WeakSet();
 var o={name:"小明"}
-s.add(o)
+/* s.add(o)
 console.log(s.has(o));//return true
 console.log(s);
-o=null;//o清空后s中也为空了
+o=null;//o清空后s中也为空了 */
 
 
 
