@@ -20,11 +20,23 @@ var Dictionary = function () {
         }
         return false;
     }
+    
+    //根据key获取值
     this.get = function (key) {
         if (this.has(key)) {
             return items[key];
         }
         return undefined;
+    }
+
+    // size方法
+    Dictionay.prototype.size = function () {
+        return this.keys().length
+    }
+
+    // clear方法
+    Dictionay.prototype.clear = function () {
+        this.items = {}
     }
     this.getItems = function () {
         return items;
