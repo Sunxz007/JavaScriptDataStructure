@@ -1,3 +1,4 @@
+//单向链表
 var LinkedList = function () {
     //初始化链表
     //链表头
@@ -5,7 +6,7 @@ var LinkedList = function () {
     //链表长度
     var length = 0;
     var Node = function (element) {
-        this.item = element;
+        this.element = element;
         this.next = null;
     }
 
@@ -47,12 +48,13 @@ var LinkedList = function () {
             } else {
                 var current = head;
                 head = node;
-                head.next = current.next;
+                head.next = current;
 
             }
             length++;
         }
     }
+    //从链表特定位置移除一项
     this.removeAt = function (position) {
         //越界
         if (position >= 0 && position < length) {
@@ -74,6 +76,20 @@ var LinkedList = function () {
         }
     }
 
+    //根据位置信息获取元素
+    this.get=function(position){
+        if(position>=0 && position<length){
+            var current=head;
+            var index=0
+            while(index<position ){
+                current=current.next;
+                index++;
+            }
+            return current.element;
+        }
+        return null;
+        
+    }
 
     //获取元素索引
     this.indexOf = function (element) {
@@ -89,11 +105,26 @@ var LinkedList = function () {
         return -1;
     }
 
+    //根据位置信息修改元素
+    this.update=function(position,element){
+        if(position>=0 && position<length){
+            var current=head;
+            var index=0;
+            while(index<position){
+                current=current.next;
+                index++;
+            }
+            current.element=element
+            return true
+        }
+        return -1;
+    }
+
     //从指定位置删除
     this.remove = function (element) {
         return removeAt(indexOf(element));
     }
-
+    //判断链表是否为空
     this.isEmpty = function () {
         return length === 0;
     }
@@ -102,9 +133,7 @@ var LinkedList = function () {
         return length;
     }
 
-
     this.getHead = function () {
         return head;
     }
-
 }
